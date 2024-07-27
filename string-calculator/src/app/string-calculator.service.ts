@@ -11,7 +11,8 @@ export class StringCalculatorService {
       return 0;
     }
 
-    const numberArray = numbers.split(',').map(Number);
+    const delimiter = /,|\n/;
+    const numberArray = numbers.split(delimiter).map(Number);
     return numberArray.reduce((sum, num) => sum + num, 0);
   }
 }
