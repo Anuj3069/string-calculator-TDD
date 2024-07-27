@@ -10,7 +10,15 @@ describe('StringCalculatorService', () => {
     service = TestBed.inject(StringCalculatorService);
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
+  it('should return 0 for an empty string', () => {
+    expect(service.add("")).toBe(0);
+  });
+
+  it('should return the number itself when a single number is provided', () => {
+    expect(service.add("1")).toBe(1);
+  });
+
+  it('should return the sum of two numbers', () => {
+    expect(service.add("1,2")).toBe(3);
   });
 });
