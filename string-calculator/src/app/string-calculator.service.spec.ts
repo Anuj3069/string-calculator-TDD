@@ -21,4 +21,9 @@ describe('StringCalculatorService', () => {
   it('should return the sum of two numbers', () => {
     expect(service.add("1,2")).toBe(3);
   });
+
+  it('should return the sum of numbers separated by commas or new lines', () => {
+    expect(service.add("1\n2,3")).toBe(6);
+  });
+
 });
